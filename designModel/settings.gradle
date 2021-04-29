@@ -1,0 +1,5 @@
+rootProject.name = 'designModel'
+include 'modules:iterator'
+findProject(':modules:iterator')?.name = 'iterator'
+include 'visitor'
+

@@ -1,0 +1,19 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE' apply false
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+repositories {
+    maven { url "https://nexus-dev.sw-cote.com.cn/repository/maven-public" }
+    maven { url "https://maven.aliyun.com/repository/central" }
+}
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+    }
+}
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
